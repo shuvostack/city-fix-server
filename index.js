@@ -217,7 +217,7 @@ app.get("/issues", async (req, res) => {
 });
 
 // Get Single Issue Details
-app.get("/issues/:id", verifyToken, async (req, res) => {
+app.get("/issues/:id", async (req, res) => {
   const id = req.params.id;
   const query = { _id: new ObjectId(id) };
   const result = await issuesCollection.findOne(query);
